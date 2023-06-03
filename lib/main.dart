@@ -10,6 +10,7 @@ import 'package:google_fonts/google_fonts.dart';
 
 import 'package:responsive_framework/responsive_wrapper.dart';
 import 'package:responsive_framework/utils/scroll_behavior.dart';
+import 'package:secure_software_synopsis/features/global_widgets/pro_tips_page.dart';
 import 'package:secure_software_synopsis/features/message_feature/presentation/pages/key_input_page.dart';
 
 import 'features/account_feature/presentation/bloc/vendor_account_bloc.dart';
@@ -165,6 +166,13 @@ final GoRouter _router = GoRouter(
       path: LOGIN_PAGE,
       builder: (context, state) {
         return const LoginPage();
+      },
+    ),
+    GoRoute(
+      name: PRO_TIPS_PAGE,
+      path: PRO_TIPS_PAGE,
+      builder: (context, state) {
+        return const ProTipsPage();
       },
     ),
   ],

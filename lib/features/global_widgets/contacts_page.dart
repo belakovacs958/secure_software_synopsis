@@ -25,14 +25,21 @@ class _ContactsPageState extends State<ContactsPage> {
     var colorScheme = Theme.of(context).colorScheme;
     return Scaffold(
       appBar: AppBar(title: Text('Contacts')),
+
       body: Column(
         children: [
+
+          ElevatedButton(
+              onPressed: () {
+              context.pushNamed(PRO_TIPS_PAGE);
+              },
+              child: Text('Pro tips')),
           ElevatedButton(
               onPressed: () {
                 BlocProvider.of<MessageBloc>(context).add(
                   CreateMessageEvent(
                     messageEntity: MessageEntity(
-                      message: 'en',
+                      message: 'Hi there demo contact',
                       sender: getFirebaseUserUid(),
                       receiver: 'slvSr6wAF9Rix6YVsdbDLXiSwdj2',
                       timeStamp: Timestamp.now(),
@@ -44,7 +51,7 @@ class _ContactsPageState extends State<ContactsPage> {
                       .add(GetAllMessagesEvent());
                 });
               },
-              child: Text('Try contacts feature')),
+              child: Text('Create demo contact')),
           ElevatedButton(
               onPressed: () {
                 BlocProvider.of<MessageBloc>(context).add(
@@ -55,7 +62,7 @@ class _ContactsPageState extends State<ContactsPage> {
                       .add(GetAllMessagesEvent());
                 });
               },
-              child: Text('Try get messages feature')),
+              child: Text('Get contacts')),
           Container(
             height: 500,
             child: BlocBuilder<MessageBloc, MessageState>(
